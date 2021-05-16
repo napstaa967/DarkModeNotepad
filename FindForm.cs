@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace bruhhpad
+namespace darkmodenotepad
 {
     internal class FindForm
     {
