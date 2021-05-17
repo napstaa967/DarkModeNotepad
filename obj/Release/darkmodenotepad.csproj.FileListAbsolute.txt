@@ -1,10 +1,10 @@
 C:\Users\leuna\source\repos\bruhhpad\bin\Release\darkmodenotepad.exe.config
 C:\Users\leuna\source\repos\bruhhpad\bin\Release\darkmodenotepad.exe
 C:\Users\leuna\source\repos\bruhhpad\bin\Release\darkmodenotepad.pdb
-C:\Users\leuna\source\repos\bruhhpad\obj\Release\darkmodenotepad.csprojAssemblyReference.cache
 C:\Users\leuna\source\repos\bruhhpad\obj\Release\darkmodenotepad.Form1.resources
 C:\Users\leuna\source\repos\bruhhpad\obj\Release\darkmodenotepad.Properties.Resources.resources
 C:\Users\leuna\source\repos\bruhhpad\obj\Release\darkmodenotepad.csproj.GenerateResource.cache
 C:\Users\leuna\source\repos\bruhhpad\obj\Release\darkmodenotepad.csproj.CoreCompileInputs.cache
 C:\Users\leuna\source\repos\bruhhpad\obj\Release\darkmodenotepad.exe
 C:\Users\leuna\source\repos\bruhhpad\obj\Release\darkmodenotepad.pdb
+C:\Users\leuna\source\repos\bruhhpad\obj\Release\darkmodenotepad.Form2.resources
