@@ -1,23 +1,47 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Diagnostics;
+using System.Drawing;
+using System.Drawing.Printing;
 using System.IO;
 using System.Windows.Forms;
 
 namespace darkmodenotepad
 {
+
+
+
     public partial class Form1 : Form
     {
 
 
+        PrintDocument document = new PrintDocument();
+        PrintDialog dialog = new PrintDialog();
         public Form1()
         {
-
+            
             InitializeComponent();
+            document.PrintPage += new PrintPageEventHandler(document_PrintPage);
+
+        }
+        void document_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString(richTextBox1.Text, richTextBox1.Font, Brushes.Black, 20, 20); 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
 
+        }
+
+        private void RichTextBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.V)
+            {
+                richTextBox1.Text += (string)Clipboard.GetData("Text");
+                e.Handled = true;
+            }
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -80,7 +104,7 @@ namespace darkmodenotepad
             richTextBox1.Clear();
         }
 
-        private void opebToolStripMenuItem_Click(object sender, EventArgs e)
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -88,7 +112,7 @@ namespace darkmodenotepad
             }
         }
 
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        private void saveasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             saveFileDialog1.DefaultExt = ".txt";
             saveFileDialog1.Filter = "Text File|*.txt|All Files|*.*";
@@ -128,17 +152,6 @@ namespace darkmodenotepad
             }
         }
 
-        private void findToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FindForm f = new FindForm();
-            f.ShowDialog();
-            if (Text != "")
-            {
-                richTextBox1.Find(Text);
-            }
-
-        }
-
         private void menuStrip1_ItemClicked_1(object sender, ToolStripItemClickedEventArgs e)
         {
 
@@ -173,5 +186,46 @@ namespace darkmodenotepad
         {
 
         }
+
+        private void toolStripSeparator1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void toolStripSeparator1_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+
+
+
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dialog.Document = document;
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                document.Print();
+            }
+        }
+
+        private void saveToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.DefaultExt = ".txt";
+            saveFileDialog1.Filter = "Text File|*.txt|All Files|*.*";
+            DialogResult dr = saveFileDialog1.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                File.WriteAllText(saveFileDialog1.FileName, richTextBox1.Text);
+            }
+
+        }
+
+        private void newWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Form1().Show();
+        }
+
     }
 }
