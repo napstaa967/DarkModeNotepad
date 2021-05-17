@@ -104,6 +104,7 @@ namespace darkmodenotepad
             this.MaximizeBox = false;
             this.Name = "Form2";
             this.Text = "Sticky NotePad";
+            this.TopMost = true;
             this.ResumeLayout(false);
 
         }

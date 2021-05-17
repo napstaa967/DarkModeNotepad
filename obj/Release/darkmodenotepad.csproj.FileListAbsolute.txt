@@ -8,3 +8,4 @@ C:\Users\leuna\source\repos\bruhhpad\obj\Release\darkmodenotepad.csproj.CoreComp
 C:\Users\leuna\source\repos\bruhhpad\obj\Release\darkmodenotepad.exe
 C:\Users\leuna\source\repos\bruhhpad\obj\Release\darkmodenotepad.pdb
 C:\Users\leuna\source\repos\bruhhpad\obj\Release\darkmodenotepad.Form2.resources
+C:\Users\leuna\source\repos\bruhhpad\obj\Release\darkmodenotepad.csprojAssemblyReference.cache
